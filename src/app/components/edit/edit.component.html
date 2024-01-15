@@ -1,0 +1,29 @@
+<p-button (onClick)="askConfirmDelete()" *ngIf="event" size="small" severity="danger" icon="pi pi-trash"></p-button>
+
+<form [formGroup]="formGroup" (ngSubmit)="send()">
+    <div>
+        <span class="p-float-label">
+            <input formControlName="title" [required]="true" pInputText type="text">
+            <label>Titre</label>
+        </span>
+    </div>
+
+    <div>
+        <span class="p-float-label">
+            <p-calendar dateFormat="dd/mm/yy" formControlName="start" [style]="{'width':'100%'}" [inputStyle]="{'width':'100%'}" [required]="true" appendTo="body"></p-calendar>
+            <label>Date de Début</label>
+        </span>
+    </div>
+
+    <div>
+        <span class="p-float-label">
+            <p-calendar dateFormat="dd/mm/yy" formControlName="end" [style]="{'width':'100%'}" [inputStyle]="{'width':'100%'}" appendTo="body"></p-calendar>
+            <label>Date de Fin</label>
+        </span>
+    </div>
+
+    <div class="actions">
+        <p-button (onClick)="cancel()" severity="secondary" label="Annuler" icon="pi pi-close" iconPos="right"></p-button>
+        <p-button type="submit" label="Sauver" icon="pi pi-send" iconPos="right"></p-button>
+    </div>
+</form>
